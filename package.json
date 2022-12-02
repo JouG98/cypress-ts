@@ -1,0 +1,41 @@
+{
+  "name": "cypress-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run compile && cypress open --browser chrome --e2e",
+    "compile": "tsc -p tsconfig.json",
+    "format": "prettier --config .prettierrc --write .",
+    "linter": "eslint --fix . --ext .ts,.tsx",
+    "lint:fix": "eslint ./cypress --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint:check-prettier": "prettier  --loglevel warn --check \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint:check-eslint": "eslint ./cypress --ext .jsx,.js,.ts,.tsx --max-warnings 0 --ignore-path ./.gitignore",
+    "lint": "npm run lint:format && npm run lint:fix "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JouG98/cypress-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JouG98/cypress-ts/issues"
+  },
+  "homepage": "https://github.com/JouG98/cypress-ts#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "cypress": "^11.2.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  }
+}
